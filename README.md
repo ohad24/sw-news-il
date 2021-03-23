@@ -3,7 +3,9 @@ This repo contains the source code for the site.
 
 ## Tech
  * Flask
- * JQuery
+ * JQuery / React
+ * Bootstrap
+ * Firebase
 
 ## Todo:
 - [ ] Mailing list
