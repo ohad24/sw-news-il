@@ -1,0 +1,8 @@
+body {
+    background-color: rgb(73, 73, 73);
+    color: rgb(189, 189, 189);
+}
+
+nav.navbar {
+    box-shadow: 0 0 10px rgb(39, 39, 39);
+}
