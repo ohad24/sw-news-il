@@ -6,3 +6,16 @@ body {
 nav.navbar {
     box-shadow: 0 0 10px rgb(39, 39, 39);
 }
+
+#recently-added.card {
+    border: none;
+    box-shadow: -5px 5px 20px 2px rgb(51, 51, 51);
+}
+
+#recently-added .card-body {
+    background-color: #2a2a2a;
+}
+
+#recently-added .card-header {
+    background-color: #6b6b6b;
+}

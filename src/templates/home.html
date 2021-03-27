@@ -4,6 +4,69 @@
 <h2>Welcome to SW News</h2>
 <p>
     This site was build to spread my daily findings related to programming and software across the internet.
-    Almost each day I encounter and learn new ideas..
+    <br>
+    Almost each day I encounter new cool ideas and learn so much from them, and try to send those articles to some specific friends base on article topics.
+    <br>
+    So I thought I should create my own place which I can store and index all my finding in one place, and create free weekly email subscription service base on article topics to send from my weekly findings.
+    <br>
+    The idea behind running my own site and not use pre-build social network because not all my friend are subscribes on one specific (so I needed to send links VIA several applications), and with my infrastructure I can fully
+    control over the data and SW interfaces, but, I need to build everything. It's a good training for me after all 💪.
 </p>
+
+
+<div class="row">
+    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+        <h3>Recently Added</h3>
+        {% for doc in docs %}
+        <div id="recently-added" class="card mb-3">
+            <div class="card-header d-flex justify-content-between">
+                <div>
+                    <span class="badge bg-primary">SW</span>
+                    <span class="badge bg-secondary">Frontend</span>
+                    <span class="badge bg-success">Backend</span>
+                    <span class="badge bg-danger">Databases</span>
+                    <span class="badge bg-warning text-dark">Data</span>
+                    <span class="badge bg-info text-dark">Python</span>
+                    <span class="badge bg-light text-dark">Node</span>
+                    <span class="badge bg-dark">Golang</span>
+                </div>
+                <div>
+                    {{ doc.ts.strftime('%Y-%m-%d') }}
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ doc.news_title }}</h5>
+                <p class="card-text">{{ doc.content }}</p>
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Go to article</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <h3>Open Source</h3>
+                <p>
+                    All site code is on
+                    <a href="https://github.com/ohad24/sw-news-il" target="_blank">
+                        <i class="fab fa-github"></i>GitHub
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Subscribe for weekly news</h3>
+                <label for="subscription-input" class="form-label">Email address</label>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" id="subscription-input" placeholder="name@example.com">
+                    <button class="btn btn-outline-primary" type="button" id="subscription-input-btn">Submit</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

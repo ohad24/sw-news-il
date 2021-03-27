@@ -14,6 +14,13 @@ python -m unittest --locals tests/flask_tests.py
 ```
 
 ## Todo:
-- [ ] Mailing list
-- [ ] Tests
+- [ ] Mailing list + email validation
+- [x] Tests
+- [ ] Full Tests
 - [ ] CI
+- [ ] Tags
+- [ ] Login
+- [ ] New article/link page
+- [ ] All article pages
+- [ ] Favicon
+- [ ] Logo
