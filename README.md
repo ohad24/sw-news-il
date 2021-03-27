@@ -7,6 +7,12 @@ This repo contains the source code for the site.
  * Bootstrap
  * Firebase
 
+## Tests
+### Flask
+```bash
+python -m unittest --locals tests/flask_tests.py
+```
+
 ## Todo:
 - [ ] Mailing list
 - [ ] Tests
