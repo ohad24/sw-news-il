@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block styles %}
+    {{super()}}
+    {% include "tags_style.html" %}
+{%- endblock styles %}
+
 {% block content %}
 <h2>Welcome to SW News</h2>
 <p>
@@ -17,25 +22,22 @@
 <div class="row">
     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
         <h3>Recently Added</h3>
-        {% for doc in docs %}
+        {% for doc in latest_news %}
         <div id="recently-added" class="card mb-3">
             <div class="card-header d-flex justify-content-between">
                 <div>
-                    <span class="badge bg-primary">SW</span>
-                    <span class="badge bg-secondary">Frontend</span>
-                    <span class="badge bg-success">Backend</span>
-                    <span class="badge bg-danger">Databases</span>
-                    <span class="badge bg-warning text-dark">Data</span>
-                    <span class="badge bg-info text-dark">Python</span>
-                    <span class="badge bg-light text-dark">Node</span>
-                    <span class="badge bg-dark">Golang</span>
+                    {% for tag_name in doc.tags %}
+                        <span class="badge tags-{{ tag_name }}">
+                            {{ tag_name }}
+                        </span>
+                    {% endfor %}
                 </div>
                 <div>
                     {{ doc.ts.strftime('%Y-%m-%d') }}
                 </div>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ doc.news_title }}</h5>
+                <h5 class="card-title">{{ doc.title }}</h5>
                 <p class="card-text">{{ doc.content }}</p>
                 <div class="d-flex justify-content-end">
                     <a href="#" class="btn btn-outline-secondary btn-sm">Go to article</a>

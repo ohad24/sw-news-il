@@ -1,0 +1,8 @@
+
+{%- block styles %}
+    <style>
+        {% for tag in tags %}
+            .tags-{{ tag.name }} {background-color: {{ tag.hex_color }};}
+        {% endfor %}
+    </style>
+{%- endblock styles %}

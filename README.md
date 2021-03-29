@@ -18,9 +18,10 @@ python -m unittest --locals tests/flask_tests.py
 - [x] Tests
 - [ ] Full Tests
 - [ ] CI
-- [ ] Tags
+- [ ] Dynamic tags + caching
 - [ ] Login
 - [ ] New article/link page
 - [ ] All article pages
 - [ ] Favicon
 - [ ] Logo
+- [ ] Init DB ?
