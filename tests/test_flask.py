@@ -4,7 +4,7 @@ sys.path.append("src/")
 
 
 import os
-if os.environ.get('GOOGLE_APPLICATION_CREDENTIALS') is not None:
+if os.environ.get('GOOGLE_APPLICATION_CREDENTIALS') is None:
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'src/sa-firestore.json'
 
 
