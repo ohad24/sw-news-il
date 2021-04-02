@@ -1,9 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from dotenv import load_dotenv
 import firebase_admin
-from firebase_admin import credentials
 from firebase_admin import firestore
-import os
 
 load_dotenv()
 

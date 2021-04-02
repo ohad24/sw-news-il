@@ -10,7 +10,7 @@ This repo contains the source code for the site.
 ## Tests
 ### Flask
 ```bash
-python -m unittest --locals tests/flask_tests.py
+pytest --cov=src -v tests/test_flask.py
 ```
 
 ## Todo:
