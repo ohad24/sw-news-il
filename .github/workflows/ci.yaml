@@ -32,7 +32,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov=src -v tests/test_flask.py
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
+    - name: Upload coverage data to coveralls.io
+      run: coveralls
       env:
         github-token: ${{ secrets.COVERALLS }}
