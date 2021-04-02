@@ -7,10 +7,7 @@ import os
 
 load_dotenv()
 
-cred = credentials.ApplicationDefault()
-firebase_admin.initialize_app(cred, {
-    'projectId': os.getenv('GCP_PROJECT_ID'),
-})
+firebase_admin.initialize_app()
 
 db = firestore.client()
 # transaction = db.transaction()
