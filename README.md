@@ -18,6 +18,7 @@ pytest --cov=src -v tests/test_flask.py
 - [x] Tests
 - [ ] Full Tests
 - [ ] CI
+- [ ] CD
 - [ ] Dynamic tags + caching
 - [ ] Login
 - [ ] New article/link page
