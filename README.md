@@ -1,6 +1,12 @@
 # Software News
 This repo contains the source code for the site.
 
+## Build
+Main branch
+
+![Github Workflow build on main](https://github.com/ohad24/sw-news-il/actions/workflows/ci.yaml/badge.svg?branch=main)
+
+
 ## Tech
  * Flask
  * JQuery / React
