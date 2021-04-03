@@ -31,7 +31,7 @@ jobs:
         export_default_credentials: true    
     - name: Test with pytest
       run: |
-        pytest --cov=src -v tests/test_flask.py
+        pytest --cov=src -v tests/
     - name: Upload coverage data to coveralls.io
       run: coveralls
       env:

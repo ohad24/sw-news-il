@@ -20,7 +20,7 @@ Automatic CI using GIthub Actions.
 ### Flask
 Run Locally on dev environment.
 ```bash
-pytest --cov=src -v tests/test_flask.py
+pytest --cov=src -v tests/
 ```
 
 ## Todo:
