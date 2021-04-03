@@ -1,8 +1,9 @@
 var email;
+var subModal = new bootstrap.Modal(document.getElementById('subscription-modal'));
+
 
 $('#subscription-input-btn').click(function() {
     email = $('#subscription-input').val();
-    var subModal = new bootstrap.Modal(document.getElementById('subscription-modal'))
     if (email.length ==  0) {
         return;
     }
@@ -21,8 +22,18 @@ $('#select-all-tags-btn').click(function() {
 
 
 $('#subscribe-tags-modal-btn').click(function() {
-    var selected_cbs = $('#tags-select-input-list-modal .form-check-input:checked')
+    var selected_cbs = $('#tags-select-input-list-modal .form-check-input:checked');
+    var tag_names = [];
     selected_cbs.each(function() {
-        console.log($(this).val());
+        var tag_name = $(this).val();
+        tag_names.push(tag_name)
     });
+    console.log(tag_names);
+    $.post( "/_subscribe", JSON.stringify({ 
+        tag_names: tag_names, 
+        email: email
+    }));
+    subModal.hide();
+    var toast = new bootstrap.Toast(document.getElementById('toast-sub-success-msg'));
+    toast.show();
 });

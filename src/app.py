@@ -1,7 +1,11 @@
-from flask import Flask, render_template, redirect, url_for
+from datetime import datetime
+from flask import Flask, render_template, redirect, url_for, jsonify, request
+from flask_wtf.csrf import CSRFProtect
 from dotenv import load_dotenv
 import firebase_admin
 from firebase_admin import firestore
+import os
+import datetime
 
 load_dotenv()
 
@@ -14,6 +18,9 @@ db_data = db_news_site.document('data')
 db_ref_data = db_news_site.document('data-ref')
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = os.getenv('APP_SECRET_KEY', '1234')
+csrf = CSRFProtect(app)
 
 
 def get_main_page_data():
@@ -34,3 +41,15 @@ def get_main_page_data():
 def index():
     latest_news, tags = get_main_page_data()
     return render_template('home.html', latest_news=latest_news, tags=tags)
+
+
+@app.route('/_subscribe', methods = ['POST'])
+def _subscribe():
+    sub_data = request.json
+    # TODO: validate email
+
+    # TODO: load to firebase
+    subscribers = db_data.collection('subscribers')
+    sub_data['ts'] = datetime.datetime.utcnow()
+    subscribers.document(sub_data.get('email')).set(sub_data)
+    return jsonify({'sussess': 'True'})

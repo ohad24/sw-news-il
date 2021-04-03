@@ -1,20 +1,34 @@
 {% extends "base.html" %}
 
 {% block styles %}
-    {{super()}}
-    {% include "tags_style.html" %}
+{{super()}}
+{% include "tags_style.html" %}
 {%- endblock styles %}
 
 {% block content %}
+<!-- <strong>Subscribed successfully</strong> You will get email every week about the topics you peaked. -->
+<div id="toast-sub-success-msg" class="toast align-items-center text-white bg-success position-fixed end-0" style="z-index: 5"
+    role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+        <div class="toast-body">
+            <strong>Subscribed successfully</strong> You will get email every week about the topics you peaked.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+            aria-label="Close"></button>
+    </div>
+</div>
 <h2>Welcome to SW News</h2>
 <p>
     This site was build to spread my daily findings related to programming and software across the internet.
     <br>
-    Almost each day I encounter new cool ideas and learn so much from them, and try to send those articles to some specific friends base on article topics.
+    Almost each day I encounter new cool ideas and learn so much from them, and try to send those articles to some
+    specific friends base on article topics.
     <br>
-    So I thought I should create my own place which I can store and index all my finding in one place, and create free weekly email subscription service base on article topics to send from my weekly findings.
+    So I thought I should create my own place which I can store and index all my finding in one place, and create free
+    weekly email subscription service base on article topics to send from my weekly findings.
     <br>
-    The idea behind running my own site and not use pre-build social network because not all my friend are subscribes on one specific (so I needed to send links VIA several applications), and with my infrastructure I can fully
+    The idea behind running my own site and not use pre-build social network because not all my friend are subscribes on
+    one specific (so I needed to send links VIA several applications), and with my infrastructure I can fully
     control over the data and SW interfaces, but, I need to build everything. It's a good training for me after all 💪.
 </p>
 
@@ -27,9 +41,9 @@
             <div class="card-header d-flex justify-content-between">
                 <div>
                     {% for tag_name in doc.tags %}
-                        <span class="badge tags-{{ tags.get(tag_name).get('style-cls') }}">
-                            {{ tag_name }}
-                        </span>
+                    <span class="badge tags-{{ tags.get(tag_name).get('style-cls') }}">
+                        {{ tag_name }}
+                    </span>
                     {% endfor %}
                 </div>
                 <div>
@@ -66,7 +80,7 @@
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" id="subscription-input" placeholder="name@example.com">
                     <button class="btn btn-outline-primary" type="button" id="subscription-input-btn">Submit</button>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
@@ -78,6 +92,6 @@
 
 
 {% block scripts %}
-    {{super()}}
-    <script defer type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
+{{super()}}
+<script defer type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
 {%- endblock scripts %}
