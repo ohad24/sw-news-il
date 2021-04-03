@@ -27,7 +27,7 @@
             <div class="card-header d-flex justify-content-between">
                 <div>
                     {% for tag_name in doc.tags %}
-                        <span class="badge tags-{{ tag_name }}">
+                        <span class="badge tags-{{ tags.get(tag_name).get('style-cls') }}">
                             {{ tag_name }}
                         </span>
                     {% endfor %}
@@ -71,4 +71,13 @@
         </div>
     </div>
 </div>
+
+{% include 'modals/sub_tags.html' %}
+
 {% endblock %}
+
+
+{% block scripts %}
+    {{super()}}
+    <script defer type="text/javascript" src="{{ url_for('static', filename='js/home.js') }}"></script>
+{%- endblock scripts %}

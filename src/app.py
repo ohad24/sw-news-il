@@ -22,8 +22,11 @@ def get_main_page_data():
         u'ts', direction=firestore.Query.DESCENDING).limit(5).stream()
     latest_news = [doc_snap.to_dict() for doc_snap in docs_ref]
 
-    tags = db_ref_data.collection('tags').get()
-    tags = [tag.to_dict() for tag in tags]
+    tags_data = db_ref_data.collection('tags').get()
+    tags = {}
+    for tag_data in tags_data:
+        d = tag_data.to_dict()
+        tags[d.get('name')] = d
     return latest_news, tags
 
 

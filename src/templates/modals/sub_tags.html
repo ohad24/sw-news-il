@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div class="modal fade" id="subscription-modal" tabindex="-1" aria-labelledby="subscription-modal-Label"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscription-modal-Label">Subscription Tags</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Hi <b id="display-email-f-model"></b>,
+                    Please select subscription tags.
+                    <br>
+                    This information will guide me to send more relevant articles for your preference.
+                    <br>
+                </p>
+                {% for tag in tags.values() %}
+                    <div id="tags-select-input-list-modal" class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox-{{ tag.get('style-cls') }}"
+                            value="{{ tag.name }}">
+                        <span class="badge tags-{{ tag.get('style-cls') }}">
+                            <label class="form-check-label" for="inlineCheckbox-{{ tag.get('style-cls') }}">
+                                {{ tag.name }}
+                            </label>
+                        </span>
+                    </div>
+                {% endfor %}
+                <br>
+                Or,
+                <button id="select-all-tags-btn" type="button" class="btn btn-outline-success btn-sm">Select all</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="subscribe-tags-modal-btn" type="button" class="btn btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</div>
