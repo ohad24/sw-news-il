@@ -9,16 +9,16 @@ Main branch
 
 ## Tech
  * Flask
- * JQuery / React
+ * JQuery
  * Bootstrap
  * Firebase
 
 ## Tests
-Automatic CI using GIthub Actions.
+Automatic CI using GIthub actions.
 
 [![Coverage Status](https://coveralls.io/repos/github/ohad24/sw-news-il/badge.svg)](https://coveralls.io/github/ohad24/sw-news-il)
 ### Flask
-Run Locally on dev environment.
+Run locally on dev environment.
 ```bash
 pytest --cov=src -v tests/
 ```
